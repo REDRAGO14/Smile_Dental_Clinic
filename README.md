@@ -1,16 +1,72 @@
-# React + Vite
+# 🦷 Smile Specialty Dental Clinic – Landing Page (Practice Project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive dental clinic landing page built with **React**, **Tailwind CSS**, and **Framer Motion**.
 
-Currently, two official plugins are available:
+This project is part of my journey to become client-ready in 120 days by building real-world websites through practice and vibe coding while understanding the fundamentals behind the code.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> ⚠️ This project is currently under active development and is used for learning, experimentation, and UI/UX practice.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🌐 Inspiration
 
-## Expanding the ESLint configuration
+This project is inspired by the real website:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+https://smilespecialtydentalclinic.com/
+
+The goal is to recreate and improve the design using modern frontend tools and clean component structure.
+
+---
+
+## 🚀 Tech Stack
+
+- ⚛️ React (Vite)
+- 🎨 Tailwind CSS
+- 🎞️ Framer Motion (for animations)
+- 🎯 React Icons
+- 📱 Fully Responsive Layout (in progress)
+
+---
+
+## ✨ Current Progress
+
+<img width="1894" height="927" alt="image" src="https://github.com/user-attachments/assets/9ed77509-f96e-4d41-85b0-65f6fa7a50b7" />
+
+
+- ✅ Navbar (fully built and styled)
+- ✅ Hero Section (with Framer Motion animations)
+- ⏳ Services Section (in progress)
+- ⏳ Doctors Section (planned)
+- ⏳ Booking Section (planned)
+- ⏳ Footer (planned)
+
+---
+
+## 🎯 Project Goals
+
+This project is helping me practice:
+
+- Building real client-style layouts
+- Understanding Tailwind’s layout system (flex, spacing, containers)
+- Creating reusable React components
+- Adding smooth UI animations with Framer Motion
+- Structuring a production-ready frontend project
+- Moving from copying designs → understanding how to build them
+
+
+---
+
+## 👨‍💻 Author
+Built by Dagim Yosef as part of a 120-day journey to become client-ready and start earning from software engineering.
+
+---
+
+## 🛠️ Installation & Setup
+
+Clone the repository and run locally:
+
+```bash
+git clone https://github.com/REDRAGO14/Smile_Dental_Clinic
+cd smile-dental-clinic
+npm install
+npm run dev
