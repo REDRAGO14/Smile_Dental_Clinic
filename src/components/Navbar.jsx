@@ -5,7 +5,7 @@ import phone from '../assets/24-hours.png'
 export default function Navbar() {
   return (
     <nav className=" pl-30 pr-30 mt-6 bg-white-200 shadow-xl">
-      <div className="nav-head flex  justify-center items-center  mb-5 gap-95">
+      <div className="nav-head flex  justify-between items-center  mb-5 ">
         <h1 className="text-3xl font-semibold text-gray-700 font-semibold">Smile Specialty Dental Center.</h1>
         <div className="open-hour flex">
           <div></div>
@@ -37,7 +37,7 @@ export default function Navbar() {
             <a href="#" className="group flex"><FaTiktok  className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl"/><span className='transition-transform duration-300 group:hover:scale-120 text-gray-600 font-sm text-sm'>TikTok</span></a>
           </div>
           <div>
-            <button className='group p-3 flex item-center justify-center text-gray-200 font-semibold bg-purple-600 rounded   cursor-pointer shadow-lg'>Book an Appointment <RiCalendarScheduleLine className="transition-transform duration-300 group-hover:translate-y-2"/></button>
+            <button className='group transition-transform duration-500 p-3 flex item-center justify-center text-gray-200 font-semibold bg-purple-600 rounded   cursor-pointer  shadow-lg'>Book an Appointment <RiCalendarScheduleLine className="transition-transform duration-300 group-hover:translate-y-2"/></button>
           </div>
         </div>
         
