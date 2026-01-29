@@ -4,7 +4,7 @@ import { IoIosArrowUp, IoMdMail } from "react-icons/io";
 export default function Footer() {
   return (
     <>
-    <footer className="text-center pl-40 pr-30 p-10 bg-gray-100 flex justify-between">
+    <footer className="text-center pl-40 pr-30 p-10 bg-gray-100 flex justify-between ">
       <div className="footer-right flex flex-col items-start ">
         <h1 className="text-2xl font-semibold text-purple-500 mb-5">Smile Specialty <span className="text-teal-500">Dental Clinic</span></h1><span className="w-15 h-1 bg-teal-600 "></span>
 
@@ -29,7 +29,7 @@ export default function Footer() {
     </ul>
       </div>
     </footer>
-    <div className="bg-blue-600 flex justify-between  p-5 pl-50 pr-50">
+    <div className="bg-blue-800  flex justify-between  p-5 pl-50 pr-50">
       <ul className="gap-2 grid">
         <li>Developed by: <strong>Dagim Yosef</strong>
 </li>
