@@ -31,11 +31,11 @@ export default function Navbar() {
         </div>
         <div className='nav-bottom-left flex item-center justify-center'>
           <div className='nav-contact flex items-center mr-20 gap-2'>
-            <a href="#"><FaFacebook  className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl"/></a>
-            <a href="#"><FaTelegram  className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl"/></a>
-            <a href="#"><FaInstagram className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl" /></a>
-            <a href="#" className="group flex"><FaTiktok  className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl"/><span className='transition-transform duration-300 group:hover:scale-120 text-gray-600 font-sm text-sm'>TikTok</span></a>
-          </div>
+              <a href="#"><FaFacebook  className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl"/></a>
+              <a href="#"><FaTelegram  className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl"/></a>
+              <a href="#"><FaInstagram className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl" /></a>
+              <a href="#" className="group flex"><FaTiktok  className="transition-transform duration-300 hover:scale-120 text-purple-600 text-xl"/><span className='transition-transform duration-300 group:hover:scale-120 text-gray-600 font-sm text-sm'>TikTok</span></a>
+            </div>
           <div>
             <button className='group transition-transform duration-500 p-3 flex item-center justify-center text-gray-200 font-semibold bg-purple-600 rounded   cursor-pointer  shadow-lg'>Book an Appointment <RiCalendarScheduleLine className="transition-transform duration-300 group-hover:translate-y-2"/></button>
           </div>
