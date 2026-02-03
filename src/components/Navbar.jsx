@@ -10,11 +10,7 @@ export default function Navbar() {
         <div className="open-hour flex">
           <div></div>
           
-          <a href="tel:+251904222324" className='hover:text-teal-500 transition-2s flex'><img src={phone} className="w-10 "alt="" /><p className='font-semibold text-xl grid mr-10 hover:text-teal-500'>  +251 904222324 <span className='text-gray-400 font-small text-sm '>Phone Number</span></p></a>
-          <div className="flex">
-            <img src={clock} className="w-10 "alt="" />
-            <p className='font-semibold text-xl grid '>Monday - Saturday<span  className='text-gray-400 font-small text-sm' > 8:30AM - 6PM</span></p>  
-          </div>
+        
           
         </div>
       </div>
