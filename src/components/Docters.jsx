@@ -43,7 +43,7 @@ const cardVariants = {
 
 export default function DoctorsSection() {
   return (
-    <section className="py-24 pb-10 bg-white overflow-hidden">
+    <section id="docters" className="py-24 pb-10 bg-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-24">
         
         {/* ENHANCED HEADER SECTION */}

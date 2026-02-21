@@ -63,7 +63,7 @@ export default function ExperienceSection() {
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section id="about" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-20">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           

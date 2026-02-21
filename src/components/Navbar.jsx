@@ -22,7 +22,7 @@ export default function Navbar() {
     { name: "Services", href: "#services" },
     { name: "About us", href: "#about" },
     { name: "FAQ", href: "#faq" },
-    { name: "Blog", href: "#blog" },
+    { name: "Transformation", href: "#transformation" },
   ];
 
   // Helper function for smooth scrolling

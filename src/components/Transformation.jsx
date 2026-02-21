@@ -85,6 +85,7 @@ export default function TransformationGallery() {
 
   return (
     <section 
+      id="transformation"
       className="py-24 pb-0 bg-[#FAFAFA] overflow-hidden"
       // Resumes auto-play when mouse leaves the section
       onMouseEnter={() => setIsPaused(true)}
