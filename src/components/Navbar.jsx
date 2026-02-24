@@ -45,9 +45,12 @@ export default function Navbar() {
       <div className="bg-blue-800 text-white h-[40px] px-4 md:px-10 lg:px-20 text-[10px] flex justify-between items-center font-light tracking-[0.15em] uppercase">
         <div className="flex gap-4 md:gap-6">
           <span className="hidden sm:inline text-blue-500-200">
-            📍 {cCfg.info.location.address.split(',')[1] || "Addis Ababa"}
+             {cCfg.info.location.address}
           </span>
-          <span className="font-bold">📞 {cCfg.info.concierge.phone}</span>
+          <span className="hidden sm:inline text-blue-500-200">
+             {cCfg.info.location.address2}
+          </span>
+          <a href="tel:0940377777" className="font-bold">📞 {cCfg.info.concierge.phone}</a>
         </div>
         <div className="flex gap-4 items-center">
           {socials.map((social, idx) => (

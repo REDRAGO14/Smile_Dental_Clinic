@@ -96,7 +96,7 @@ export default function ContactLocation() {
             value={formData.fullName}
             onChange={handleChange}
             className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-blue-500 focus:outline-none border-b transition-all ${errors.fullName ? "border-red-500" : "border-gray-100 focus:border-blue-500"}`}
-            placeholder="John Doe"
+            placeholder="Abebe Kebede"
           />
           {errors.fullName && <p className="text-[8px] text-red-500 mt-1 uppercase font-bold">{errors.fullName}</p>}
         </div>
@@ -109,7 +109,7 @@ export default function ContactLocation() {
             value={formData.email}
             onChange={handleChange}
             className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-blue-500 focus:outline-none border-b transition-all ${errors.email ? "border-red-500" : "border-gray-100 focus:border-blue-500"}`}
-            placeholder="hello@luxury.com"
+            placeholder="yomadentalclinic@gmail.com"
           />
           {errors.email && <p className="text-[8px] text-red-500 mt-1 uppercase font-bold">{errors.email}</p>}
         </div>
@@ -122,7 +122,7 @@ export default function ContactLocation() {
             value={formData.phoneNumber}
             onChange={handleChange}
             className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-blue-500 focus:outline-none border-b transition-all ${errors.phoneNumber ? "border-red-500" : "border-gray-100 focus:border-blue-500"}`}
-            placeholder="+251 ..."
+            placeholder="0940 - 37 77 77"
           />
           {errors.phoneNumber && <p className="text-[8px] text-red-500 mt-1 uppercase font-bold">{errors.phoneNumber}</p>}
         </div>
@@ -149,7 +149,7 @@ export default function ContactLocation() {
         type="submit"
         disabled={loading}
         whileTap={{ scale: 0.97 }}
-        className="w-full flex items-center justify-center gap-3 bg-blue-500 text-white py-4 md:py-5 rounded-full text-[12px] md:text-[14px] font-black uppercase tracking-widest shadow-xl active:bg-blue-700 transition-all"
+        className="w-full cursor-pointer flex items-center justify-center gap-3 bg-blue-500 text-white py-4 md:py-5 rounded-full text-[12px] md:text-[14px] font-black uppercase tracking-widest shadow-xl active:bg-blue-700 transition-all"
       >
         <span>{loading ? cCfg.form.loadingText : cCfg.form.buttonText}</span>
         <RiCalendarScheduleLine size={18} />
@@ -176,6 +176,7 @@ export default function ContactLocation() {
           <div>
             <p className="text-blue-400 font-black uppercase tracking-widest text-[8px] md:text-[9px] mb-1">Office</p>
             <p className="text-white/80 text-sm md:text-lg leading-snug">{cCfg.info.location.address}</p>
+            <p className="text-white/80 text-sm md:text-lg leading-snug">{cCfg.info.location.address2}</p>
           </div>
         </div>
 

@@ -23,10 +23,10 @@ export const CLINIC_CONFIG = {
         highlight: "#2D83E8",
     },
     socials: [
-      { Icon: FaInstagram, url: "#" },
-      { Icon: FaFacebookF, url: "#" },
-      { Icon: FaTelegramPlane, url: "#" },
-      { Icon: FaTiktok, url: "#" },
+      { Icon: FaInstagram, url: "https://www.instagram.com/yoma_speciality_dental_clinic/profilecard/" },
+      { Icon: FaFacebookF, url: "https://web.facebook.com/profile.php?id=100086603682965&sk=about" },
+      { Icon: FaTelegramPlane, url: "https://t.me/YomaDental" },
+      { Icon: FaTiktok, url: "https://www.tiktok.com/@yoma_dental_clinic_1?is_from_webapp=1&sender_device=pc" },
     ],
   },
   navigation: [
@@ -37,10 +37,10 @@ export const CLINIC_CONFIG = {
     { name: "Transformation", href: "#transformation" },
   ],
   socials: [
-    { icon: FaFacebook, href: "#", name: "Facebook" },
-    { icon: FaTelegram, href: "#", name: "Telegram" },
-    { icon: FaInstagram, href: "#", name: "Instagram" },
-    { icon: FaTiktok, href: "#", name: "Tiktok" },
+    { icon: FaFacebook, href: "https://web.facebook.com/profile.php?id=100086603682965&sk=about", name: "Facebook" },
+    { icon: FaTelegram, href: "https://t.me/YomaDental", name: "Telegram" },
+    { icon: FaInstagram, href: "https://www.instagram.com/yoma_speciality_dental_clinic/profilecard/", name: "Instagram" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@yoma_dental_clinic_1?is_from_webapp=1&sender_device=pc", name: "Tiktok" },
   ],
   contactSection: {
     form: {
@@ -64,12 +64,13 @@ export const CLINIC_CONFIG = {
       title: "Our Center",
       location: {
         label: "Location",
-        address: "123 smile Plaza, Bole District, Addis Ababa",
-        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.54!2d38.78!3d9.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnMDAuMCJOIDM4wrA0Nic0OC4wIkU!5e0!3m2!1sen!2set!4v1625000000000!5m2!1sen!2set"
+        address: "📍ቁጥር 1 - ለቡ መብራት ኃይል",
+        address2: "📍ቁጥር 2 - ላፍቶ",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5008.684881827828!2d38.72985731154037!3d8.948150891072956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b81c5f8558165%3A0x69fefdedf09bae1d!2zWU9NQSBTUEVDSUFMVFkgREVOVEFMIENMSU5JQyDhi67hiJsg4Yi14Y2U4Yi74YiK4YmyIOGLqOGMpeGIreGItSDhiIXhiq3hiJ3hipMg4Yqt4YiK4YqS4Yqt!5e1!3m2!1sen!2set!4v1771970574818!5m2!1sen!2set"
       },
       concierge: {
         label: "Concierge",
-        phone: "+251 911 000 000"
+        phone: "0940 - 37 77 770"
       }
     },
     validation: {
