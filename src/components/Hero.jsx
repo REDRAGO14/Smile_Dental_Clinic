@@ -1,54 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
-
-// Assuming assets are in your project
-import whitening from "../assets/whiting.png";
-import Prosthesis from "../assets/Prosthesis.png";
-import chair from "../assets/dentist-chair.png";
-import invisible from "../assets/denture.png";
-import comfortable from "../assets/diagnostic-tool.png";
-import protection from "../assets/dental-insurance.png";
-
-const heroData = [
-  {
-    title: "Transform Your Smile",
-    title2: "Experience confidence with a healthy smile.",
-    services: [
-      { img: whitening, tit: "Whitening", des: "Latest technology for a radiant appearance." },
-      { img: Prosthesis, tit: "Prosthesis", des: "Natural-looking solutions for missing teeth." },
-    ],
-    bg: "https://smilespecialtydentalclinic.com/wp-content/uploads/2024/07/Home-1.-Experience-confidence-with-a-healthy-smile.updated-1.jpg",
-  },
-  {
-    title: "Compassionate Care",
-    title2: "Expert care for your family's dental needs.",
-    services: [
-      { img: protection, tit: "Full Protection", des: "Custom guards to safeguard your teeth." },
-      { img: chair, tit: "Complete Service", des: "A wide range of dental and related services." },
-    ],
-    bg: "https://smilespecialtydentalclinic.com/wp-content/uploads/2024/07/Home-3.-Expert-care-for-your-familys-dental-needsupdated.jpg",
-  },
-  {
-    title: "Clear Aligners",
-    title2: "Invisible Aligners for a Confident Smile",
-    services: [
-      { img: invisible, tit: "Invisible", des: "Smile and talk with complete confidence." },
-      { img: comfortable, tit: "Comfortable", des: "Perfect fit with no sharp parts or pain." },
-    ],
-    bg: "https://smilespecialtydentalclinic.com/wp-content/uploads/2024/07/Home-2.-Invisible-Aligners-for-a-Confident-Smileupdated.jpg",
-  },
-];
+import { CLINIC_CONFIG } from "../config/clinic.config";
 
 export default function Hero() {
+  const { hero: hCfg, branding: brCfg } = CLINIC_CONFIG;
   const [sliderIndex, setSliderIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSliderIndex((prev) => (prev + 1) % heroData.length);
-    }, 6000);
+      setSliderIndex((prev) => (prev + 1) % hCfg.slides.length);
+    }, hCfg.interval);
     return () => clearInterval(interval);
-  }, []);
+  }, [hCfg.interval, hCfg.slides.length]);
+
   const scrollToServices = () => {
     const section = document.getElementById("services");
     if (section) {
@@ -58,7 +23,7 @@ export default function Hero() {
 
   return (
     <section className="relative my-24 h-screen w-full overflow-hidden flex items-center bg-black">
-      {/* Background with Zoom Effect - Fixed the 'wait' flicker */}
+      {/* Background with Zoom Effect */}
       <AnimatePresence initial={false}>
         <motion.div
           key={sliderIndex}
@@ -68,7 +33,7 @@ export default function Hero() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url(${heroData[sliderIndex].bg})`,
+            backgroundImage: `url(${hCfg.slides[sliderIndex].bg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -79,7 +44,6 @@ export default function Hero() {
       </AnimatePresence>
 
       <div className="relative z-10 container mx-auto px-6 lg:px-20">
-        {/* Added mode="wait" here to ensure text swaps cleanly */}
         <AnimatePresence mode="wait">
           <motion.div
             key={`content-${sliderIndex}`}
@@ -89,23 +53,23 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "circOut" }}
             className="max-w-3xl"
           >
-            <span className="text-teal-400 font-bold tracking-[0.4em] uppercase text-xs mb-4 block">
-              {heroData[sliderIndex].title}
+            <span className={`text-${brCfg.colors.highlight} font-bold tracking-[0.4em] uppercase text-xs mb-4 block`}>
+              {hCfg.slides[sliderIndex].title}
             </span>
 
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-10 tracking-tighter">
-              {heroData[sliderIndex].title2}
+              {hCfg.slides[sliderIndex].title2}
             </h2>
 
             <div className="flex flex-col md:flex-row gap-8 mb-12">
-              {heroData[sliderIndex].services.map((s, i) => (
+              {hCfg.slides[sliderIndex].services.map((s, i) => (
                 <div key={i} className="flex gap-4 items-start group">
                   <div className="p-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
                     <img src={s.img} className="w-8 h-8 brightness-200" alt="" />
                   </div>
 
                   <div>
-                    <h4 className="text-teal-400 font-bold uppercase text-sm tracking-widest">
+                    <h4 className={`text-${brCfg.colors.highlight} font-bold uppercase text-sm tracking-widest`}>
                       {s.tit}
                     </h4>
                     <p className="text-gray-300 text-xs mt-1 max-w-[200px] leading-relaxed">
@@ -116,13 +80,13 @@ export default function Hero() {
               ))}
             </div>
 
-           <motion.button
+            <motion.button
               onClick={scrollToServices}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group cursor-pointer bg-teal-600 hover:bg-teal-500 text-white px-10 py-5 rounded-full font-black uppercase text-[11px] tracking-[0.2em] flex items-center gap-4 transition-all shadow-2xl shadow-teal-900/40"
+              className={`group cursor-pointer bg-${brCfg.colors.secondary} hover:bg-teal-500 text-white px-10 py-5 rounded-full font-black uppercase text-[11px] tracking-[0.2em] flex items-center gap-4 transition-all shadow-2xl shadow-teal-900/40`}
             >
-              Explore Our Services 
+              {hCfg.ctaText}
               <IoIosArrowForward className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </motion.div>
@@ -131,14 +95,14 @@ export default function Hero() {
 
       {/* Luxury Vertical Indicators */}
       <div className="absolute right-10 flex flex-col gap-6 z-20">
-        {heroData.map((_, i) => (
+        {hCfg.slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setSliderIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
             className={`transition-all duration-700 rounded-full ${
               i === sliderIndex
-                ? "h-16 w-1 bg-teal-400 shadow-[0_0_10px_rgba(45,212,191,0.6)]"
+                ? `h-16 w-1 bg-${brCfg.colors.highlight} shadow-[0_0_10px_rgba(45,212,191,0.6)]`
                 : "h-4 w-1 bg-white/30 hover:bg-white/60"
             }`}
           />
