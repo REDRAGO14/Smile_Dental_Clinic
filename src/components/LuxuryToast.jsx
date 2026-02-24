@@ -5,40 +5,40 @@ import { HiCheckBadge, HiXCircle } from "react-icons/hi2";
 export const showLuxuryToast = (message, type = "success") => {
   toast.custom((t) => (
     <motion.div
-      initial={{ opacity: 0, y: -20, scale: 0.9 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
+      initial={{ opacity: 0, y: -40, scale: 0.9, filter: "blur(10px)" }}
+      animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -20, scale: 0.95, transition: { duration: 0.2 } }}
       className={`${
-        t.visible ? 'animate-enter' : 'animate-leave'
-      } max-w-md w-full bg-white/80 backdrop-blur-xl pointer-events-auto flex ring-1 ring-purple-900/10 shadow-[0_20px_50px_rgba(45,20,80,0.15)] rounded-[2rem] p-4 border border-white`}
+        t.visible ? 'active' : 'idle'
+      } max-w-[90vw] md:max-w-md w-full bg-white/70 backdrop-blur-2xl pointer-events-auto flex flex-col md:flex-row shadow-[0_25px_60px_rgba(45,20,80,0.2)] rounded-[2.5rem] overflow-hidden border border-white/40`}
     >
-      <div className="flex-1 w-0 p-2">
-        <div className="flex items-center">
-          <div className="flex-shrink-0 pt-0.5">
+      <div className="flex-1 p-5 md:p-6">
+        <div className="flex items-start md:items-center gap-4">
+          <div className="shrink-0 p-2 bg-white rounded-2xl shadow-sm">
             {type === "success" ? (
-              <HiCheckBadge className="h-10 w-10 text-teal-600" />
+              <HiCheckBadge className="h-7 w-7 text-teal-600" />
             ) : (
-              <HiXCircle className="h-10 w-10 text-red-500" />
+              <HiXCircle className="h-7 w-7 text-red-500" />
             )}
           </div>
-          <div className="ml-4 flex-1">
-            <p className="text-[10px] uppercase tracking-[0.3em] font-black text-teal-600 mb-1">
-              System Notification
+          <div className="flex-1">
+            <p className="text-[9px] uppercase tracking-[0.4em] font-black text-teal-600/60 mb-1">
+              {type === "success" ? "Selection Confirmed" : "System Alert"}
             </p>
-            <p className="text-sm font-bold text-purple-900 leading-tight">
+            <p className="text-[13px] md:text-sm font-bold text-purple-950 leading-snug">
               {message}
             </p>
           </div>
         </div>
       </div>
-      <div className="flex border-l border-gray-100">
-        <button
-          onClick={() => toast.dismiss(t.id)}
-          className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-xs font-black uppercase tracking-widest text-purple-400 hover:text-purple-900 transition-colors focus:outline-none"
-        >
-          Close
-        </button>
-      </div>
+      
+      {/* Action Area */}
+      <button
+        onClick={() => toast.dismiss(t.id)}
+        className="bg-purple-900/5 md:bg-transparent border-t md:border-t-0 md:border-l border-purple-900/5 px-6 py-3 md:py-0 text-[10px] font-black uppercase tracking-widest text-purple-900 hover:bg-purple-900 hover:text-white transition-all duration-300"
+      >
+        Dismiss
+      </button>
     </motion.div>
-  ), { duration: 5000 });
+  ), { position: 'top-center', duration: 4000 });
 };

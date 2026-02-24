@@ -22,7 +22,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative my-24 h-screen w-full overflow-hidden flex items-center bg-black">
+    <section className="relative mt-20 h-screen w-full overflow-hidden flex items-center bg-black">
       {/* Background with Zoom Effect */}
       <AnimatePresence initial={false}>
         <motion.div

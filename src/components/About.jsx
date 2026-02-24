@@ -4,12 +4,10 @@ import { HiCheckBadge } from "react-icons/hi2";
 import { CLINIC_CONFIG } from "../config/clinic.config";
 
 const AnimatedNumber = ({ value, suffix }) => {
-  const { branding: brCfg } = CLINIC_CONFIG;
   const ref = useRef(null);
   const motionValue = useMotionValue(0);
-  
-  // Animate every time it comes into view
-  const isInView = useInView(ref, { once: false, margin: "-100px" });
+  // once: false allows the count-up to repeat every time you scroll back to it
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
   
   const springValue = useSpring(motionValue, {
     damping: 30,
@@ -26,12 +24,12 @@ const AnimatedNumber = ({ value, suffix }) => {
     if (isInView) {
       motionValue.set(value);
     } else {
-      motionValue.set(0);
+      motionValue.set(0); // Reset to 0 when out of view so it can re-animate
     }
   }, [isInView, value, motionValue]);
 
   return (
-    <span ref={ref} className={`text-3xl font-black text-${brCfg.colors.accent}`}>
+    <span ref={ref} className="text-2xl md:text-3xl font-black text-teal-600">
       <motion.span>{displayValue}</motion.span>
       {suffix}
     </span>
@@ -39,99 +37,104 @@ const AnimatedNumber = ({ value, suffix }) => {
 };
 
 export default function ExperienceSection() {
-  const { branding: brCfg, aboutSection: aCfg } = CLINIC_CONFIG;
+  const { aboutSection: aCfg } = CLINIC_CONFIG;
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
     visible: { 
       opacity: 1, 
       y: 0, 
+      filter: "blur(0px)",
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
     },
   };
 
   return (
-    <section id="about" className="py-24 bg-white overflow-hidden">
+    <section id="about" className="py-16 md:py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-20">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
-          {/* Visual Side */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1 }}
-            className="relative lg:w-1/2"
-          >
-            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-gray-50 group">
-              <motion.img 
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.8 }}
+          {/* 1. VISUAL SIDE */}
+          <div className="relative w-full lg:w-1/2">
+            <motion.div 
+              initial={{ opacity: 0, x: -80, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }} // once: false re-triggers on scroll
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-4 md:border-8 border-gray-50 group"
+            >
+              <img 
                 src={aCfg.mainImage} 
                 alt="Modern Dental Office" 
-                className="w-full h-[600px] object-cover"
+                className="w-full h-[400px] md:h-[650px] object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className={`absolute inset-0 bg-${brCfg.colors.primary}/5 group-hover:bg-transparent transition-colors duration-500`} />
-            </div>
+              <div className="absolute inset-0 bg-purple-900/5 group-hover:bg-transparent transition-colors duration-500" />
+            </motion.div>
 
-            {/* Floating Stats Card */}
+            {/* 2. EXPERIENCE CARD (New Direction: Slides from Bottom-Left) */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9, y: 40 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="absolute -bottom-10 -right-10 hidden md:grid grid-cols-2 gap-6 bg-white p-8 rounded-3xl shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-gray-100 z-10"
+              initial={{ opacity: 0, x: -100, y: 100, scale: 0.8 }}
+              whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ 
+                type: "spring",
+                damping: 20,
+                stiffness: 80,
+                delay: 0.2 
+              }}
+              className="mt-6 md:mt-0 md:absolute -bottom-10 -right-10 grid grid-cols-2 gap-4 md:gap-8 bg-white p-6 md:p-10 rounded-3xl shadow-[0_30px_60px_rgba(0,0,0,0.15)] border border-gray-100 z-10"
             >
               {aCfg.stats.map((stat, i) => (
-                <div key={i} className="text-center min-w-[120px]">
+                <div key={i} className="text-center min-w-[100px]">
                   <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-extrabold mt-1 leading-tight">
+                  <p className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-gray-400 font-extrabold mt-2 leading-tight">
                     {stat.label}
                   </p>
                 </div>
               ))}
             </motion.div>
-          </motion.div>
+          </div>
 
-          {/* Content Side */}
+          {/* 3. CONTENT SIDE */}
           <motion.div 
-            className="lg:w-1/2"
+            className="w-full lg:w-1/2"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.2 }} // Re-triggers text animations
           >
-            <motion.span variants={itemVariants} className={`text-${brCfg.colors.secondary} font-bold tracking-[0.4em] uppercase text-[11px] mb-6 block border-l-2 border-${brCfg.colors.secondary} pl-4`}>
+            <motion.span variants={itemVariants} className="text-teal-600 font-bold tracking-[0.4em] uppercase text-[10px] md:text-xs mb-6 block border-l-2 border-teal-600 pl-4">
               {aCfg.badge}
             </motion.span>
             
-            <motion.h2 variants={itemVariants} className={`text-5xl lg:text-6xl font-black text-${brCfg.colors.primary} leading-[1.1] mb-8 tracking-tighter`}>
-              {aCfg.title} <br/>
-              <span className={`italic font-light serif text-${brCfg.colors.accent}`}>{aCfg.subtitle}</span>
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-7xl font-black text-purple-900 leading-[1.1] mb-8 tracking-tighter">
+              {aCfg.title} <br className="hidden md:block"/>
+              <span className="italic font-light serif text-teal-600">{aCfg.subtitle}</span>
             </motion.h2>
             
-            <motion.p variants={itemVariants} className="text-gray-600 text-lg leading-relaxed mb-10 max-w-lg">
+            <motion.p variants={itemVariants} className="text-gray-500 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
               {aCfg.description}
             </motion.p>
 
-            <div className="space-y-5 mb-12">
+            {/* Features List with Slide-in Animation */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               {aCfg.features.map((item, i) => (
                 <motion.div 
                   key={i} 
                   variants={itemVariants}
-                  whileHover={{ x: 8 }}
-                  className="flex items-center gap-4 text-gray-800 font-bold tracking-tight"
+                  whileHover={{ x: 10 }}
+                  className="flex items-center gap-3 text-purple-900 font-bold text-sm md:text-base tracking-tight"
                 >
-                  <div className="bg-teal-50 p-1 rounded-full">
-                    <HiCheckBadge className="text-teal-500 text-2xl" />
+                  <div className="bg-teal-50 p-1 rounded-full shrink-0">
+                    <HiCheckBadge className="text-teal-500 text-xl md:text-2xl" />
                   </div>
                   {item}
                 </motion.div>
@@ -140,9 +143,9 @@ export default function ExperienceSection() {
 
             <motion.button 
               variants={itemVariants}
-              whileHover={{ scale: 1.03, backgroundColor: "#4c1d95" }}
-              whileTap={{ scale: 0.97 }}
-              className={`bg-${brCfg.colors.primary} text-white px-12 py-5 rounded-full font-bold shadow-2xl shadow-purple-900/20`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto bg-purple-900 text-white px-12 py-5 rounded-full font-black uppercase text-[11px] tracking-widest shadow-2xl hover:bg-teal-600 transition-all duration-500"
             >
               {aCfg.ctaText}
             </motion.button>

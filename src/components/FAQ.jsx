@@ -4,19 +4,17 @@ import { HiPlus, HiMinus } from "react-icons/hi2";
 import { CLINIC_CONFIG } from "../config/clinic.config";
 
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
-  const { branding: brCfg } = CLINIC_CONFIG;
-  
   return (
-    <div className="border-b border-purple-100">
+    <div className="border-b border-purple-100 last:border-0">
       <button
         onClick={onClick}
-        className="w-full py-8 flex items-center justify-between text-left group transition-all"
+        className="w-full py-6 md:py-8 flex items-center justify-between text-left group transition-all"
       >
-        <span className={`text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? `text-${brCfg.colors.secondary}` : `text-${brCfg.colors.primary} group-hover:text-purple-700`}`}>
+        <span className={`text-lg md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-teal-600' : 'text-purple-900 group-hover:text-purple-700'}`}>
           {question}
         </span>
-        <div className={`flex-shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? `bg-${brCfg.colors.secondary} text-white rotate-180` : `bg-purple-50 text-${brCfg.colors.primary}`}`}>
-          {isOpen ? <HiMinus /> : <HiPlus />}
+        <div className={`flex-shrink-0 ml-4 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-teal-600 text-white rotate-180' : 'bg-purple-50 text-purple-900'}`}>
+          {isOpen ? <HiMinus size={14} /> : <HiPlus size={14} />}
         </div>
       </button>
       <AnimatePresence>
@@ -28,7 +26,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-8 text-gray-500 leading-relaxed max-w-3xl text-lg">
+            <p className="pb-6 md:pb-8 text-gray-500 leading-relaxed max-w-3xl text-base md:text-lg">
               {answer}
             </p>
           </motion.div>
@@ -43,50 +41,55 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="pb-8 md:py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-24">
-        <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-24">
           
-          {/* Header Section */}
-          <div className="lg:w-1/3">
+          {/* Header Section: Full width on mobile, 1/3 on desktop */}
+          <div className="w-full lg:w-1/3">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className={`text-${brCfg.colors.secondary} font-bold tracking-[0.4em] uppercase text-[10px] block mb-4`}
+              viewport={{ once: true }}
+              className="text-teal-600 font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] block mb-4"
             >
               {cfg.badge}
             </motion.span>
-            <h2 className={`text-5xl md:text-6xl font-black text-${brCfg.colors.primary} tracking-tighter leading-[0.9] mb-8`}>
+            
+            <h2 className="text-4xl md:text-6xl font-black text-purple-900 tracking-tighter leading-[1.1] mb-6 md:mb-8">
               {cfg.title} <br />
-              <span className={`font-light italic font-serif text-${brCfg.colors.accent}`}>{cfg.subtitle}</span>
+              <span className="font-light italic font-serif text-teal-600">
+                {cfg.subtitle}
+              </span>
             </h2>
             
-            {/* Summarized Description */}
-            <div className="space-y-6 text-gray-500 font-medium leading-relaxed">
-              <p>
-                {cfg.description}
-              </p>
-              <p className={`text-sm border-l-2 border-${brCfg.colors.secondary} pl-4 py-1`}>
+            <div className="space-y-4 md:space-y-6 text-gray-500 font-medium leading-relaxed text-sm md:text-base">
+              <p>{cfg.description}</p>
+              <p className="text-xs md:text-sm border-l-2 border-teal-600 pl-4 py-1 text-purple-900/70 italic">
                 {cfg.conciergeNote}
               </p>
             </div>
             
-            <div className={`mt-12 w-24 h-1 bg-${brCfg.colors.secondary}/10 rounded-full overflow-hidden`}>
+            {/* Decorative progress bar - Hidden on mobile for cleaner look if preferred, or kept for flair */}
+            <div className="mt-10 md:mt-12 w-20 md:w-24 h-1 bg-teal-600/10 rounded-full overflow-hidden">
                 <motion.div 
                     initial={{ x: "-100%" }}
                     whileInView={{ x: "0%" }}
+                    viewport={{ once: true }}
                     transition={{ duration: 1.5 }}
-                    className={`w-full h-full bg-${brCfg.colors.secondary}`}
+                    className="w-full h-full bg-teal-600"
                 />
             </div>
           </div>
 
-          {/* FAQ Accordion */}
-          <div className="lg:w-2/3">
+          {/* FAQ Accordion: Full width on mobile, 2/3 on desktop */}
+          <div className="w-full lg:w-2/3">
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="divide-y divide-purple-100"
             >
               {cfg.questions.map((faq, index) => (
                 <AccordionItem
