@@ -27,7 +27,7 @@ export default function ReceptionistDashboard() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/api/booking");
+      const res = await fetch("https://smile-dental-clinic-lkzo.onrender.com/api/booking");
       const data = await res.json();
       setBookings(data);
     } catch (err) {
@@ -57,7 +57,7 @@ export default function ReceptionistDashboard() {
   const updatePatient = async (id, updates) => {
     setBookings(prev => prev.map(b => b._id === id ? { ...b, ...updates } : b));
     try {
-      await fetch(`http://localhost:3000/api/bookings/${id}`, {
+      await fetch(`https://smile-dental-clinic-lkzo.onrender.com/api/bookings/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updates),

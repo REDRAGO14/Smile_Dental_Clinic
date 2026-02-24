@@ -49,7 +49,7 @@ export const CLINIC_CONFIG = {
       subtitle: "Transformation.",
       buttonText: "Book Appointment",
       loadingText: "Processing...",
-      successMessage: "Journey begun. Our concierge will call you.",
+      successMessage: "Journey begun. Our Clinic will call you Shortly.",
       errorMessage: "Submission failed. Please check details.",
       serverOfflineMessage: "Clinic server is offline.",
       services: [
