@@ -25,7 +25,7 @@ export default function DoctorsSection() {
   const { branding: brCfg, doctorsSection: dCfg } = CLINIC_CONFIG;
 
   return (
-    <section id="doctors" className="py-20 md:py-32 bg-white overflow-hidden">
+    <section id="doctors" className="py-20 md:pt-32 bg-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-24">
         
         {/* HEADER SECTION - Optimized for Mobile Stack */}

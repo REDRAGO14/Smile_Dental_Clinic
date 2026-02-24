@@ -41,7 +41,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="pb-8 md:py-32 bg-white overflow-hidden">
+    <section id="faq" className="pb-8 md:p-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-24">
         <div className="flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-24">
           
@@ -50,7 +50,7 @@ export default function FAQ() {
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               className="text-blue-800 font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] block mb-4"
             >
               {cfg.badge}
@@ -75,7 +75,7 @@ export default function FAQ() {
                 <motion.div 
                     initial={{ x: "-100%" }}
                     whileInView={{ x: "0%" }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 1.5 }}
                     className="w-full h-full bg-blue-800"
                 />
@@ -87,7 +87,7 @@ export default function FAQ() {
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
               className="divide-y divide-blue-500-100"
             >
