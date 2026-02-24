@@ -16,16 +16,16 @@ export const showLuxuryToast = (message, type = "success") => {
         <div className="flex items-start md:items-center gap-4">
           <div className="shrink-0 p-2 bg-white rounded-2xl shadow-sm">
             {type === "success" ? (
-              <HiCheckBadge className="h-7 w-7 text-teal-600" />
+              <HiCheckBadge className="h-7 w-7 text-blue-800" />
             ) : (
               <HiXCircle className="h-7 w-7 text-red-500" />
             )}
           </div>
           <div className="flex-1">
-            <p className="text-[9px] uppercase tracking-[0.4em] font-black text-teal-600/60 mb-1">
+            <p className="text-[9px] uppercase tracking-[0.4em] font-black text-blue-800/60 mb-1">
               {type === "success" ? "Selection Confirmed" : "System Alert"}
             </p>
-            <p className="text-[13px] md:text-sm font-bold text-purple-950 leading-snug">
+            <p className="text-[13px] md:text-sm font-bold text-blue-500-950 leading-snug">
               {message}
             </p>
           </div>
@@ -35,7 +35,7 @@ export const showLuxuryToast = (message, type = "success") => {
       {/* Action Area */}
       <button
         onClick={() => toast.dismiss(t.id)}
-        className="bg-purple-900/5 md:bg-transparent border-t md:border-t-0 md:border-l border-purple-900/5 px-6 py-3 md:py-0 text-[10px] font-black uppercase tracking-widest text-purple-900 hover:bg-purple-900 hover:text-white transition-all duration-300"
+        className="bg-blue-500/5 md:bg-transparent border-t md:border-t-0 md:border-l border-blue-500/5 px-6 py-3 md:py-0 text-[10px] font-black uppercase tracking-widest text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300"
       >
         Dismiss
       </button>

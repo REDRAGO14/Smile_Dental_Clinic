@@ -53,7 +53,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "circOut" }}
             className="max-w-3xl"
           >
-            <span className={`text-${brCfg.colors.highlight} font-bold tracking-[0.4em] uppercase text-xs mb-4 block`}>
+            <span className={`text-blue-400 font-bold tracking-[0.4em] uppercase text-xs mb-4 block`}>
               {hCfg.slides[sliderIndex].title}
             </span>
 
@@ -69,7 +69,7 @@ export default function Hero() {
                   </div>
 
                   <div>
-                    <h4 className={`text-${brCfg.colors.highlight} font-bold uppercase text-sm tracking-widest`}>
+                    <h4 className={`text-blue-400 font-bold uppercase text-sm tracking-widest`}>
                       {s.tit}
                     </h4>
                     <p className="text-gray-300 text-xs mt-1 max-w-[200px] leading-relaxed">
@@ -84,7 +84,7 @@ export default function Hero() {
               onClick={scrollToServices}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`group cursor-pointer bg-${brCfg.colors.secondary} hover:bg-teal-500 text-white px-10 py-5 rounded-full font-black uppercase text-[11px] tracking-[0.2em] flex items-center gap-4 transition-all shadow-2xl shadow-teal-900/40`}
+              className={`group cursor-pointer bg-blue-500 hover:bg-blue-800 text-white px-10 py-5 rounded-full font-black uppercase text-[11px] tracking-[0.2em] flex items-center gap-4 transition-all shadow-2xl shadow-blue-900/40`}
             >
               {hCfg.ctaText}
               <IoIosArrowForward className="group-hover:translate-x-1 transition-transform" />
@@ -102,7 +102,7 @@ export default function Hero() {
             aria-label={`Go to slide ${i + 1}`}
             className={`transition-all duration-700 rounded-full ${
               i === sliderIndex
-                ? `h-16 w-1 bg-${brCfg.colors.highlight} shadow-[0_0_10px_rgba(45,212,191,0.6)]`
+                ? `h-16 w-1 bg-blue-400 shadow-[0_0_10px_rgba(45,212,191,0.6)]`
                 : "h-4 w-1 bg-white/30 hover:bg-white/60"
             }`}
           />

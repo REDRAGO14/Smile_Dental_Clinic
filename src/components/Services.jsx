@@ -42,7 +42,7 @@ export default function Services() {
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-teal-600 font-bold uppercase text-[10px] sm:text-[12px] tracking-[0.3em] mb-4 block"
+              className="text-blue-800 font-bold uppercase text-[10px] sm:text-[12px] tracking-[0.3em] mb-4 block"
             >
               {sCfg.badge}
             </motion.span>
@@ -52,10 +52,10 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-purple-900 tracking-tighter leading-[1] md:leading-[0.9]"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-blue-500 tracking-tighter leading-[1] md:leading-[0.9]"
             >
               {sCfg.title} <br className="hidden sm:block" />
-              <span className="italic font-light serif text-teal-600">{sCfg.subtitle}</span>
+              <span className="italic font-light serif text-blue-800">{sCfg.subtitle}</span>
             </motion.h2>
           </div>
 
@@ -71,9 +71,9 @@ export default function Services() {
               <motion.div 
                 animate={{ height: ["0%", "100%", "0%"] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute left-0 lg:left-auto lg:right-0 top-0 w-[2px] bg-teal-500 shadow-[0_0_8px_rgba(20,184,166,0.4)]"
+                className="absolute left-0 lg:left-auto lg:right-0 top-0 w-[2px] bg-blue-500 shadow-[0_0_8px_rgba(20,184,166,0.4)]"
               />
-              <div className="absolute left-0 lg:left-auto lg:right-0 top-0 w-[2px] h-full bg-teal-500/10" />
+              <div className="absolute left-0 lg:left-auto lg:right-0 top-0 w-[2px] h-full bg-blue-500/10" />
               <p className="text-gray-500 text-sm sm:text-base max-w-sm leading-relaxed italic">
                 {sCfg.description}
               </p>
@@ -82,7 +82,7 @@ export default function Services() {
             <motion.button 
               onClick={scrollToContact}
               whileHover={{ scale: 1.05 }}
-              className="group flex items-center gap-3 bg-purple-900 text-white px-8 py-5 rounded-full text-[10px] md:text-[11px] font-black uppercase tracking-widest shadow-xl hover:bg-teal-600 transition-all duration-500"
+              className="group flex items-center gap-3 bg-blue-500 text-white px-8 py-5 rounded-full text-[10px] md:text-[11px] font-black uppercase tracking-widest shadow-xl hover:bg-blue-800 transition-all duration-500"
             >
               <span>{sCfg.ctaText}</span>
               <RiCalendarScheduleLine size={18} className="group-hover:rotate-12 transition-transform" />
@@ -119,7 +119,7 @@ export default function Services() {
                   alt={service.title}
                   className={`w-full h-full object-cover transition-transform duration-[1.5s] ${isExpanded ? 'scale-110' : 'scale-100'}`}
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t from-purple-950 via-purple-900/20 to-transparent transition-opacity duration-500 ${isExpanded ? 'opacity-95' : 'opacity-80'}`} />
+                <div className={`absolute inset-0 bg-gradient-to-t from-blue-800 via-blue-800/20 to-transparent transition-opacity duration-500 ${isExpanded ? 'opacity-95' : 'opacity-80'}`} />
               </div>
 
               {/* Content Section */}
@@ -134,7 +134,7 @@ export default function Services() {
                 
                 {/* Expandable Description Area */}
                 <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isExpanded ? "h-28 opacity-100" : "h-0 opacity-0"}`}>
-                  <p className="text-purple-100/80 text-sm leading-relaxed mb-6 font-light">
+                  <p className="text-gray-100/80 text-sm leading-relaxed mb-6 font-light">
                     {service.description}
                   </p>
                 </div>
@@ -143,14 +143,14 @@ export default function Services() {
                   <span className={`text-[10px] font-black uppercase tracking-widest transition-opacity duration-500 ${isExpanded ? 'opacity-100' : 'opacity-0'}`}>
                     Explore Service
                   </span>
-                  <div className={`w-12 h-12 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 ${isExpanded ? 'bg-white text-purple-900' : 'bg-transparent text-white'}`}>
+                  <div className={`w-12 h-12 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 ${isExpanded ? 'bg-white text-blue-500' : 'bg-transparent text-white'}`}>
                     <HiArrowRight size={20} className={`transition-transform duration-500 ${isExpanded ? 'rotate-0' : '-rotate-45'}`} />
                   </div>
                 </div>
               </div>
 
               {/* Top Accent Line */}
-              <div className={`absolute top-0 left-0 w-full h-1.5 bg-teal-500 origin-left transition-transform duration-700 ${isExpanded ? 'scale-x-100' : 'scale-x-0'}`} />
+              <div className={`absolute top-0 left-0 w-full h-1.5 bg-blue-500 origin-left transition-transform duration-700 ${isExpanded ? 'scale-x-100' : 'scale-x-0'}`} />
             </motion.div>
           );
         })}
@@ -162,9 +162,9 @@ export default function Services() {
         whileInView={{ opacity: 1 }}
         className="mt-12 md:mt-20 flex justify-center pb-12"
       >
-        <button className="group flex items-center gap-3 text-gray-400 font-bold text-[11px] uppercase tracking-[0.4em] hover:text-purple-900 transition-all">
+        <button className="group flex items-center gap-3 text-gray-400 font-bold text-[11px] uppercase tracking-[0.4em] hover:text-blue-500 transition-all">
           {sCfg.viewAllText}
-          <div className="w-1 h-1 bg-teal-500 rounded-full group-hover:w-12 transition-all duration-500" />
+          <div className="w-1 h-1 bg-blue-500 rounded-full group-hover:w-12 transition-all duration-500" />
         </button>
       </motion.div>
     </section>

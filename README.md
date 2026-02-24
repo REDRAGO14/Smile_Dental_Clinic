@@ -1,4 +1,4 @@
-# 🦷 Smile Specialty Dental Clinic – Landing Page (Practice Project)
+# 🦷 smile Specialty Dental Clinic – Landing Page (Practice Project)
 
 A modern, responsive dental clinic landing page built with **React**, **Tailwind CSS**, and **Framer Motion**.
 
@@ -66,7 +66,7 @@ Built by Dagim Yosef as part of a 120-day journey to become client-ready and sta
 Clone the repository and run locally:
 
 ```bash
-git clone https://github.com/REDRAGO14/Smile_Dental_Clinic
+git clone https://github.com/REDRAGO14/smile_Dental_Clinic
 cd smile-dental-clinic
 npm install
 npm run dev

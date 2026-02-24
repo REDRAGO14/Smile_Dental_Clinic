@@ -42,16 +42,16 @@ export default function Navbar() {
       }`}
     >
       {/* 1. TOP INFO BAR - Hidden on mobile, flex on desktop */}
-      <div className="bg-purple-900 text-white h-[40px] px-4 md:px-10 lg:px-20 text-[10px] flex justify-between items-center font-light tracking-[0.15em] uppercase">
+      <div className="bg-blue-800 text-white h-[40px] px-4 md:px-10 lg:px-20 text-[10px] flex justify-between items-center font-light tracking-[0.15em] uppercase">
         <div className="flex gap-4 md:gap-6">
-          <span className="hidden sm:inline text-purple-200">
+          <span className="hidden sm:inline text-blue-500-200">
             📍 {cCfg.info.location.address.split(',')[1] || "Addis Ababa"}
           </span>
           <span className="font-bold">📞 {cCfg.info.concierge.phone}</span>
         </div>
         <div className="flex gap-4 items-center">
           {socials.map((social, idx) => (
-            <a key={idx} href={social.href} className="hover:text-teal-400 transition-colors">
+            <a key={idx} href={social.href} className="hover:text-blue-400 transition-colors">
               <social.icon size={14} />
             </a>
           ))}
@@ -72,10 +72,10 @@ export default function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <div className="flex items-baseline gap-1 md:gap-2">
-            <h1 className="text-lg sm:text-xl md:text-2xl font-[900] tracking-tighter text-purple-900 leading-none">
-              SMILE
+            <h1 className="text-lg sm:text-xl md:text-2xl font-[900] tracking-tighter text-blue-500 leading-none">
+              YOMA
             </h1>
-            <span className="text-lg sm:text-xl md:text-2xl font-light italic font-serif text-teal-600 leading-none">
+            <span className="text-lg sm:text-xl md:text-2xl font-light italic font-serif text-blue-800 leading-none">
               SPECIALTY
             </span>
           </div>
@@ -89,10 +89,10 @@ export default function Navbar() {
           {navigation.map((item) => (
             <li
               key={item.name}
-              className="relative group cursor-pointer hover:text-purple-900 transition-colors"
+              className="relative group cursor-pointer hover:text-blue-500 transition-colors"
             >
               <a href={item.href}>{item.name}</a>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
           ))}
         </ul>
@@ -103,7 +103,7 @@ export default function Navbar() {
             onClick={scrollToContact}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="group flex cursor-pointer items-center gap-2 md:gap-3 bg-purple-900 text-white px-4 py-3 md:px-8 md:py-5 rounded-full text-[9px] md:text-[11px] font-black uppercase tracking-widest shadow-2xl hover:bg-teal-600 transition-all duration-500"
+            className="group flex cursor-pointer items-center gap-2 md:gap-3 bg-blue-500 text-white px-4 py-3 md:px-8 md:py-5 rounded-full text-[9px] md:text-[11px] font-black uppercase tracking-widest shadow-2xl hover:bg-blue-800 transition-all duration-500"
           >
             <span className="hidden xs:block">Book Appointment</span>
             <span className="xs:hidden">Book APPOINTMENT</span>
@@ -113,7 +113,7 @@ export default function Navbar() {
           {/* MOBILE TOGGLE - LG Hidden */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-purple-900 hover:bg-gray-100 rounded-full transition-colors"
+            className="lg:hidden p-2 text-blue-500 hover:bg-gray-100 rounded-full transition-colors"
             aria-label="Toggle Menu"
           >
             {isOpen ? <HiOutlineX size={24} /> : <HiOutlineMenuAlt3 size={24} />}
@@ -134,8 +134,8 @@ export default function Navbar() {
             <div className="flex justify-between items-center mb-12 md:mb-16">
               <div className="flex flex-col">
                 <div className="flex items-baseline gap-2">
-                  <h1 className="text-2xl font-[900] tracking-tighter text-purple-900">SMILE</h1>
-                  <span className="text-2xl font-light italic font-serif text-teal-600">SPECIALTY</span>
+                  <h1 className="text-2xl font-[900] tracking-tighter text-blue-500">YOMA</h1>
+                  <span className="text-2xl font-light italic font-serif text-blue-800">SPECIALTY</span>
                 </div>
                 <span className="text-[10px] tracking-[0.4em] uppercase text-gray-400 font-bold">DENTAL CENTER</span>
               </div>
@@ -143,7 +143,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="p-3 bg-gray-100 rounded-full"
               >
-                <HiOutlineX size={24} className="text-purple-900" />
+                <HiOutlineX size={24} className="text-blue-500" />
               </button>
             </div>
 
@@ -158,7 +158,7 @@ export default function Navbar() {
                   <a
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-4xl md:text-6xl font-black text-purple-900 tracking-tighter hover:text-teal-600 transition-colors"
+                    className="text-4xl md:text-6xl font-black text-blue-500 tracking-tighter hover:text-blue-800 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -169,7 +169,7 @@ export default function Navbar() {
             <div className="mt-auto border-t border-gray-100 pt-8">
               <motion.button
                 onClick={scrollToContact}
-                className="w-full flex items-center justify-center gap-4 bg-purple-900 text-white py-5 md:py-7 rounded-full text-[11px] md:text-[13px] font-black uppercase tracking-widest mb-8"
+                className="w-full flex items-center justify-center gap-4 bg-blue-500 text-white py-5 md:py-7 rounded-full text-[11px] md:text-[13px] font-black uppercase tracking-widest mb-8"
               >
                 <span>Book Appointment</span>
                 <RiCalendarScheduleLine size={20} />
@@ -178,11 +178,11 @@ export default function Navbar() {
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 sm:gap-0">
                 <div>
                   <p className="text-[9px] uppercase tracking-[0.3em] text-gray-400 font-bold mb-1">Direct Line</p>
-                  <p className="text-lg md:text-xl font-bold text-purple-900">{cCfg.info.concierge.phone}</p>
+                  <p className="text-lg md:text-xl font-bold text-blue-500">{cCfg.info.concierge.phone}</p>
                 </div>
                 <div className="flex gap-4">
                   {socials.map((social, idx) => (
-                    <a key={idx} href={social.href} className="text-purple-900 text-xl hover:text-teal-600 transition-all">
+                    <a key={idx} href={social.href} className="text-blue-500 text-xl hover:text-blue-800 transition-all">
                       <social.icon />
                     </a>
                   ))}

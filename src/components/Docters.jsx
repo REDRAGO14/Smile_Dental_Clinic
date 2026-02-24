@@ -36,7 +36,7 @@ export default function DoctorsSection() {
               whileInView={{ opacity: 1, letterSpacing: "0.3em" }}
               viewport={{ once: false }}
               transition={{ duration: 1 }}
-              className="text-teal-600 font-bold uppercase text-[10px] block mb-4 md:mb-6"
+              className="text-blue-800 font-bold uppercase text-[10px] block mb-4 md:mb-6"
             >
               {dCfg.badge}
             </motion.span>
@@ -46,16 +46,16 @@ export default function DoctorsSection() {
                 initial={{ height: "0%" }}
                 animate={{ height: ["0%", "100%", "0%"] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute left-0 top-0 w-[2px] md:w-[3px] bg-teal-500 shadow-[0_0_10px_rgba(20,184,166,0.5)]"
+                className="absolute left-0 top-0 w-[2px] md:w-[3px] bg-bule-500 shadow-[0_0_10px_rgba(20,184,166,0.5)]"
               />
               <motion.h2 
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false }}
-                className="text-4xl md:text-7xl font-black text-purple-900 tracking-tighter leading-[1.1] md:leading-[0.9]"
+                className="text-4xl md:text-7xl font-black text-blue-900 tracking-tighter leading-[1.1] md:leading-[0.9]"
               >
                 {dCfg.title} <br className="hidden md:block"/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-900 via-purple-500 to-purple-900">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-blue-500 to-blue-900">
                   {dCfg.subtitle}
                 </span>
               </motion.h2>
@@ -100,16 +100,16 @@ export default function DoctorsSection() {
                 />
                 
                 {/* Mobile Info Overlay (Visible on Touch or Hover) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-950 via-purple-900/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 md:p-10">
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-blue-900/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 md:p-10">
                   <div className="translate-y-0 md:translate-y-10 md:group-hover:translate-y-0 transition-transform duration-700 ease-out">
                     <p className="text-white text-[11px] md:text-sm leading-relaxed mb-6 italic font-light line-clamp-3 md:line-clamp-none">
                       "{doc.description}"
                     </p>
                     <div className="flex gap-3">
-                       <button className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white hover:bg-teal-500 transition-all">
+                       <button className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white hover:bg-blue-500 transition-all">
                          <FaLinkedinIn size={14}/>
                        </button>
-                       <button className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white hover:bg-teal-500 transition-all">
+                       <button className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white hover:bg-blue-500 transition-all">
                          <FaGraduationCap size={16}/>
                        </button>
                     </div>
@@ -119,19 +119,19 @@ export default function DoctorsSection() {
 
               {/* Info Section */}
               <div className="mt-6 md:mt-10 px-2 md:px-4">
-                <h3 className="text-2xl md:text-3xl font-black text-purple-900 tracking-tight mb-1">
+                <h3 className="text-2xl md:text-3xl font-black text-blue-900 tracking-tight mb-1">
                   {doc.name}
                 </h3>
                 <div className="flex items-center gap-3">
-                  <span className="w-8 md:w-10 h-[2px] bg-teal-500" />
-                  <p className="text-teal-600 font-bold uppercase tracking-[0.2em] text-[9px] md:text-[10px]">
+                  <span className="w-8 md:w-10 h-[2px] bg-blue-500" />
+                  <p className="text-blue-800 font-bold uppercase tracking-[0.2em] text-[9px] md:text-[10px]">
                     {doc.role}
                   </p>
                 </div>
                 
                 <motion.button 
                   whileHover={{ x: 5 }}
-                  className="mt-6 md:mt-8 flex items-center gap-2 text-[10px] md:text-[11px] font-black text-gray-400 uppercase tracking-widest hover:text-purple-600 transition-all"
+                  className="mt-6 md:mt-8 flex items-center gap-2 text-[10px] md:text-[11px] font-black text-gray-400 uppercase tracking-widest hover:text-blue-600 transition-all"
                 >
                   View Full Profile
                   <span className="text-lg">→</span>

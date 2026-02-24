@@ -29,7 +29,7 @@ const AnimatedNumber = ({ value, suffix }) => {
   }, [isInView, value, motionValue]);
 
   return (
-    <span ref={ref} className="text-2xl md:text-3xl font-black text-teal-600">
+    <span ref={ref} className="text-2xl md:text-3xl font-black text-blue-800">
       <motion.span>{displayValue}</motion.span>
       {suffix}
     </span>
@@ -76,7 +76,7 @@ export default function ExperienceSection() {
                 alt="Modern Dental Office" 
                 className="w-full h-[400px] md:h-[650px] object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-purple-900/5 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-transparent transition-colors duration-500" />
             </motion.div>
 
             {/* 2. EXPERIENCE CARD (New Direction: Slides from Bottom-Left) */}
@@ -111,13 +111,13 @@ export default function ExperienceSection() {
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }} // Re-triggers text animations
           >
-            <motion.span variants={itemVariants} className="text-teal-600 font-bold tracking-[0.4em] uppercase text-[10px] md:text-xs mb-6 block border-l-2 border-teal-600 pl-4">
+            <motion.span variants={itemVariants} className="text-blue-800 font-bold tracking-[0.4em] uppercase text-[10px] md:text-xs mb-6 block border-l-2 border-blue-800 pl-4">
               {aCfg.badge}
             </motion.span>
             
-            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-7xl font-black text-purple-900 leading-[1.1] mb-8 tracking-tighter">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-7xl font-black text-blue-500 leading-[1.1] mb-8 tracking-tighter">
               {aCfg.title} <br className="hidden md:block"/>
-              <span className="italic font-light serif text-teal-600">{aCfg.subtitle}</span>
+              <span className="italic font-light serif text-blue-800">{aCfg.subtitle}</span>
             </motion.h2>
             
             <motion.p variants={itemVariants} className="text-gray-500 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
@@ -131,10 +131,10 @@ export default function ExperienceSection() {
                   key={i} 
                   variants={itemVariants}
                   whileHover={{ x: 10 }}
-                  className="flex items-center gap-3 text-purple-900 font-bold text-sm md:text-base tracking-tight"
+                  className="flex items-center gap-3 text-blue-500 font-bold text-sm md:text-base tracking-tight"
                 >
-                  <div className="bg-teal-50 p-1 rounded-full shrink-0">
-                    <HiCheckBadge className="text-teal-500 text-xl md:text-2xl" />
+                  <div className="bg-blue-50 p-1 rounded-full shrink-0">
+                    <HiCheckBadge className="text-blue-500 text-xl md:text-2xl" />
                   </div>
                   {item}
                 </motion.div>
@@ -145,7 +145,7 @@ export default function ExperienceSection() {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto bg-purple-900 text-white px-12 py-5 rounded-full font-black uppercase text-[11px] tracking-widest shadow-2xl hover:bg-teal-600 transition-all duration-500"
+              className="w-full sm:w-auto bg-blue-500 text-white px-12 py-5 rounded-full font-black uppercase text-[11px] tracking-widest shadow-2xl hover:bg-blue-800 transition-all duration-500"
             >
               {aCfg.ctaText}
             </motion.button>

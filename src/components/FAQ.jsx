@@ -5,15 +5,15 @@ import { CLINIC_CONFIG } from "../config/clinic.config";
 
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
   return (
-    <div className="border-b border-purple-100 last:border-0">
+    <div className="border-b border-blue-500-100 last:border-0">
       <button
         onClick={onClick}
         className="w-full py-6 md:py-8 flex items-center justify-between text-left group transition-all"
       >
-        <span className={`text-lg md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-teal-600' : 'text-purple-900 group-hover:text-purple-700'}`}>
+        <span className={`text-lg md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-blue-800' : 'text-blue-500 group-hover:text-blue-500-700'}`}>
           {question}
         </span>
-        <div className={`flex-shrink-0 ml-4 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-teal-600 text-white rotate-180' : 'bg-purple-50 text-purple-900'}`}>
+        <div className={`flex-shrink-0 ml-4 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-blue-800 text-white rotate-180' : 'bg-blue-500-50 text-blue-500'}`}>
           {isOpen ? <HiMinus size={14} /> : <HiPlus size={14} />}
         </div>
       </button>
@@ -51,33 +51,33 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-teal-600 font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] block mb-4"
+              className="text-blue-800 font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] block mb-4"
             >
               {cfg.badge}
             </motion.span>
             
-            <h2 className="text-4xl md:text-6xl font-black text-purple-900 tracking-tighter leading-[1.1] mb-6 md:mb-8">
+            <h2 className="text-4xl md:text-6xl font-black text-blue-500 tracking-tighter leading-[1.1] mb-6 md:mb-8">
               {cfg.title} <br />
-              <span className="font-light italic font-serif text-teal-600">
+              <span className="font-light italic font-serif text-blue-800">
                 {cfg.subtitle}
               </span>
             </h2>
             
             <div className="space-y-4 md:space-y-6 text-gray-500 font-medium leading-relaxed text-sm md:text-base">
               <p>{cfg.description}</p>
-              <p className="text-xs md:text-sm border-l-2 border-teal-600 pl-4 py-1 text-purple-900/70 italic">
+              <p className="text-xs md:text-sm border-l-2 border-blue-800 pl-4 py-1 text-blue-500/70 italic">
                 {cfg.conciergeNote}
               </p>
             </div>
             
             {/* Decorative progress bar - Hidden on mobile for cleaner look if preferred, or kept for flair */}
-            <div className="mt-10 md:mt-12 w-20 md:w-24 h-1 bg-teal-600/10 rounded-full overflow-hidden">
+            <div className="mt-10 md:mt-12 w-20 md:w-24 h-1 bg-blue-800/10 rounded-full overflow-hidden">
                 <motion.div 
                     initial={{ x: "-100%" }}
                     whileInView={{ x: "0%" }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5 }}
-                    className="w-full h-full bg-teal-600"
+                    className="w-full h-full bg-blue-800"
                 />
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function FAQ() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="divide-y divide-purple-100"
+              className="divide-y divide-blue-500-100"
             >
               {cfg.questions.map((faq, index) => (
                 <AccordionItem

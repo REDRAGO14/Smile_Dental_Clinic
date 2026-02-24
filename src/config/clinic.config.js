@@ -11,16 +11,16 @@ import { FaLinkedinIn, FaGraduationCap } from "react-icons/fa";
 
 export const CLINIC_CONFIG = {
   branding: {
-    name: "SMILE",
+    name: "YOMA",
     suffix: "Specialty",
-    legalName: "Smile Specialty Dental Clinic",
+    legalName: "YOMA Specialty Dental Clinic",
     description: "Redefining dental artistry in Ethiopia. Where clinical precision meets a world-class luxury experience.",
     colors: {
-      primary: "purple-900",
-      secondary: "teal-600",
-      accent: "purple-700",
-      bgDark: "#2d1450",
-       highlight: "teal-400",
+      primary: "blue-500",
+      secondary: "#2D83E8",
+      accent: "#2D83E8",
+      bgDark: "blue-500",
+        highlight: "#2D83E8",
     },
     socials: [
       { Icon: FaInstagram, url: "#" },
@@ -64,7 +64,7 @@ export const CLINIC_CONFIG = {
       title: "Our Center",
       location: {
         label: "Location",
-        address: "123 Smile Plaza, Bole District, Addis Ababa",
+        address: "123 smile Plaza, Bole District, Addis Ababa",
         mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.54!2d38.78!3d9.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnMDAuMCJOIDM4wrA0Nic0OC4wIkU!5e0!3m2!1sen!2set!4v1625000000000!5m2!1sen!2set"
       },
       concierge: {
@@ -115,7 +115,7 @@ export const CLINIC_CONFIG = {
     sections: [
       {
         title: "The Experience",
-        links: ["Digital Smile Design", "Our Specialists", "Boutique Gallery", "Patient Stories"],
+        links: ["Digital smile Design", "Our Specialists", "Boutique Gallery", "Patient Stories"],
       },
       {
         title: "Concierge",
@@ -139,7 +139,7 @@ export const CLINIC_CONFIG = {
   contact: {
     phone: "+251 911 000 000",
     email: "concierge@smilespecialty.com",
-    address: "123 Smile Plaza, Bole District, Addis Ababa",
+    address: "123 smile Plaza, Bole District, Addis Ababa",
     googleMapsEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.553254924558!2d38.786938!3d9.0142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnNTEuMSJOIDM4wrA0NycxMy4wIkU!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set", // Replace with real embed URL
     hours: [
@@ -166,7 +166,7 @@ export const CLINIC_CONFIG = {
       {
         id: "veneers",
         tabLabel: "Porcelain Veneers",
-        procedure: "Full Smile Design",
+        procedure: "Full smile Design",
         duration: "2 Weeks",
         before: "https://i.ibb.co/MQHrtx8/image.png",
         after: "https://i.ibb.co/n86hYMRG/image.png",
@@ -259,7 +259,7 @@ export const CLINIC_CONFIG = {
     ctaText: "Explore Our Services",
     slides: [
       {
-        title: "Transform Your Smile",
+        title: "Transform Your smile",
         title2: "Experience confidence with a healthy smile.",
         services: [
           { img: whitening, tit: "Whitening", des: "Latest technology for a radiant appearance." },
@@ -278,9 +278,9 @@ export const CLINIC_CONFIG = {
       },
       {
         title: "Clear Aligners",
-        title2: "Invisible Aligners for a Confident Smile",
+        title2: "Invisible Aligners for a Confident smile",
         services: [
-          { img: invisible, tit: "Invisible", des: "Smile and talk with complete confidence." },
+          { img: invisible, tit: "Invisible", des: "smile and talk with complete confidence." },
           { img: comfortable, tit: "Comfortable", des: "Perfect fit with no sharp parts or pain." },
         ],
         bg: "https://smilespecialtydentalclinic.com/wp-content/uploads/2024/07/Home-2.-Invisible-Aligners-for-a-Confident-Smileupdated.jpg",
@@ -325,11 +325,11 @@ export const CLINIC_CONFIG = {
     badge: "Premium Dental Experience",
     title: "Bespoke Artistry.",
     subtitle: "Digital Precision.",
-    description: "We leverage Digital Smile Design technology to craft results that are as unique as you are.",
+    description: "We leverage Digital smile Design technology to craft results that are as unique as you are.",
     mainImage: "https://smilespecialtydentalclinic.com/wp-content/uploads/2024/07/Home-9.-Book-Your-Visit-At-2-scaled.jpg",
     ctaText: "Discover Our Philosophy",
     features: [
-      "Digital Smile Design (DSD) Technology",
+      "Digital smile Design (DSD) Technology",
       "Ultra-Private Treatment Suites",
       "Advanced Sedation for Total Comfort"
     ],

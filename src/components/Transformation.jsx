@@ -14,7 +14,7 @@ const CASES = [
   {
     id: "veneers",
     tabLabel: "Porcelain Veneers",
-    procedure: "Full Smile Design",
+    procedure: "Full YOMA Design",
     duration: "2 Weeks",
     before: "https://i.ibb.co/MQHrtx8/image.png", 
     after: "https://i.ibb.co/n86hYMRG/image.png",
@@ -89,11 +89,11 @@ export default function TransformationGallery() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-teal-600 font-bold tracking-[0.4em] md:tracking-[0.5em] uppercase text-[9px] md:text-[10px] block mb-3 md:mb-4">
+            <span className="text-blue-800 font-bold tracking-[0.4em] md:tracking-[0.5em] uppercase text-[9px] md:text-[10px] block mb-3 md:mb-4">
               Clinical Excellence
             </span>
-            <h2 className="text-4xl md:text-7xl font-black text-purple-900 tracking-tighter mb-8 md:mb-12">
-              Transformative <span className="italic font-light serif text-purple-700">Results.</span>
+            <h2 className="text-4xl md:text-7xl font-black text-blue-500 tracking-tighter mb-8 md:mb-12">
+              Transformative <span className="italic font-light serif text-blue-500-700">Results.</span>
             </h2>
           </motion.div>
 
@@ -108,8 +108,8 @@ export default function TransformationGallery() {
                   }}
                   className={`px-6 md:px-10 py-3 md:py-4 rounded-full text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-500 relative z-10 ${
                     activeIndex === index 
-                    ? "bg-purple-900 text-white shadow-xl scale-105" 
-                    : "bg-white text-gray-400 border border-gray-100 hover:text-purple-900"
+                    ? "bg-blue-500 text-white shadow-xl scale-105" 
+                    : "bg-white text-gray-400 border border-gray-100 hover:text-blue-500"
                   }`}
                 >
                   {item.tabLabel}
@@ -121,7 +121,7 @@ export default function TransformationGallery() {
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: AUTO_PLAY_DURATION / 1000, ease: "linear" }}
-                    className="absolute bottom-0 left-4 right-4 h-[2px] bg-teal-400 origin-left z-20 rounded-full"
+                    className="absolute bottom-0 left-4 right-4 h-[2px] bg-blue-400 origin-left z-20 rounded-full"
                   />
                 )}
               </div>
@@ -158,7 +158,7 @@ export default function TransformationGallery() {
                   </div>
                 </motion.div>
 
-                <div className="absolute top-6 right-6 md:top-10 md:right-10 bg-teal-500/70 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em] z-30">
+                <div className="absolute top-6 right-6 md:top-10 md:right-10 bg-blue-500/70 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em] z-30">
                   After
                 </div>
 
@@ -168,7 +168,7 @@ export default function TransformationGallery() {
                 >
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
                     <div className="w-10 h-10 md:w-14 md:h-14 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/40 shadow-2xl transition-transform group-hover/slider:scale-110">
-                        <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center text-purple-900 shadow-lg">
+                        <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center text-blue-500 shadow-lg">
                             <HiOutlineArrowLeft size={10} className="md:w-3 md:h-3" />
                             <HiOutlineArrowRight size={10} className="md:w-3 md:h-3" />
                         </div>
@@ -184,13 +184,13 @@ export default function TransformationGallery() {
                 className="mx-4 md:mx-auto max-w-3xl relative z-40 bg-white/95 backdrop-blur-sm p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-gray-100 flex flex-row items-center justify-around gap-4 md:gap-8 text-center"
               >
                 <div className="flex-1">
-                  <p className="text-[8px] md:text-[9px] font-black text-teal-600 uppercase tracking-[0.2em] mb-1 md:mb-2">Procedure</p>
-                  <p className="text-sm md:text-2xl font-bold text-purple-900 serif italic leading-tight">{activeCase.procedure}</p>
+                  <p className="text-[8px] md:text-[9px] font-black text-blue-800 uppercase tracking-[0.2em] mb-1 md:mb-2">Procedure</p>
+                  <p className="text-sm md:text-2xl font-bold text-blue-500 serif italic leading-tight">{activeCase.procedure}</p>
                 </div>
                 <div className="w-px h-8 md:h-12 bg-gray-200" />
                 <div className="flex-1">
-                  <p className="text-[8px] md:text-[9px] font-black text-teal-600 uppercase tracking-[0.2em] mb-1 md:mb-2">Timeline</p>
-                  <p className="text-sm md:text-2xl font-bold text-purple-900 leading-tight">{activeCase.duration}</p>
+                  <p className="text-[8px] md:text-[9px] font-black text-blue-800 uppercase tracking-[0.2em] mb-1 md:mb-2">Timeline</p>
+                  <p className="text-sm md:text-2xl font-bold text-blue-500 leading-tight">{activeCase.duration}</p>
                 </div>
               </motion.div>
             </motion.div>

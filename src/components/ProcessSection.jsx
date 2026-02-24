@@ -9,14 +9,14 @@ const STEPS = [
     title: "The Vision Consultation",
     description: "We begin with a comprehensive digital mapping of your smile. We discuss your aesthetic goals and use AI imaging to preview your final results.",
     icon: <HiOutlineUserGroup className="text-3xl" />,
-    color: "bg-purple-50 text-purple-600",
+    color: "bg-blue-500-50 text-blue-500-600",
   },
   {
     number: "02",
     title: "Bespoke Design",
     description: "Our master artisans craft your custom dental plan. Using 3D printing and biocompatible materials, we ensure every detail aligns with your facial symmetry.",
     icon: <HiOutlineBeaker className="text-3xl" />, // Updated Icon
-    color: "bg-teal-50 text-teal-600",
+    color: "bg-blue-50 text-blue-800",
   },
   {
     number: "03",
@@ -38,12 +38,12 @@ export default function ProcessSection() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-teal-600 font-bold tracking-[0.3em] uppercase text-[10px] block mb-4"
+            className="text-blue-800 font-bold tracking-[0.3em] uppercase text-[10px] block mb-4"
           >
             The Signature Journey
           </motion.span>
-          <h2 className="text-5xl md:text-6xl font-black text-purple-900 tracking-tighter leading-none mb-6">
-            Three Steps to <br/>Your Forever Smile.
+          <h2 className="text-5xl md:text-6xl font-black text-blue-500 tracking-tighter leading-none mb-6">
+            Three Steps to <br/>Your Forever smile.
           </h2>
         </div>
 
@@ -68,7 +68,7 @@ export default function ProcessSection() {
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-purple-900 mb-4 tracking-tight">
+              <h3 className="text-2xl font-bold text-blue-500 mb-4 tracking-tight">
                 {step.title}
               </h3>
               <p className="text-gray-500 leading-relaxed text-sm">
@@ -80,7 +80,7 @@ export default function ProcessSection() {
 
         {/* Final CTA */}
         <div className="mt-20 text-center">
-          <button className="bg-purple-900 text-white px-12 py-5 rounded-full font-bold text-lg shadow-2xl hover:bg-purple-800 transition-all hover:scale-105 active:scale-95">
+          <button className="bg-blue-500 text-white px-12 py-5 rounded-full font-bold text-lg shadow-2xl hover:bg-blue-500-800 transition-all hover:scale-105 active:scale-95">
             Begin Your Consultation
           </button>
         </div>

@@ -76,12 +76,12 @@ export default function ContactLocation() {
   
   {/* LEFT (Desktop) / TOP (Mobile): THE FORM */}
   <div className="w-full lg:w-1/2 p-8 md:p-16 lg:p-20 bg-white order-1">
-    <span className="text-teal-600 font-bold tracking-[0.3em] uppercase text-[9px] md:text-[10px] block mb-3">
+    <span className="text-blue-800 font-bold tracking-[0.3em] uppercase text-[9px] md:text-[10px] block mb-3">
       {cCfg.form.badge}
     </span>
-    <h2 className="text-3xl md:text-6xl font-black text-purple-900 tracking-tighter mb-8 md:mb-12 leading-tight">
+    <h2 className="text-3xl md:text-6xl font-black text-blue-500 tracking-tighter mb-8 md:mb-12 leading-tight">
       {cCfg.form.title} <br className="hidden md:block" />
-      <span className="font-light italic font-serif text-teal-600">
+      <span className="font-light italic font-serif text-blue-800">
         {cCfg.form.subtitle}
       </span>
     </h2>
@@ -95,7 +95,7 @@ export default function ContactLocation() {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
-            className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-purple-900 focus:outline-none border-b transition-all ${errors.fullName ? "border-red-500" : "border-gray-100 focus:border-teal-500"}`}
+            className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-blue-500 focus:outline-none border-b transition-all ${errors.fullName ? "border-red-500" : "border-gray-100 focus:border-blue-500"}`}
             placeholder="John Doe"
           />
           {errors.fullName && <p className="text-[8px] text-red-500 mt-1 uppercase font-bold">{errors.fullName}</p>}
@@ -108,7 +108,7 @@ export default function ContactLocation() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-purple-900 focus:outline-none border-b transition-all ${errors.email ? "border-red-500" : "border-gray-100 focus:border-teal-500"}`}
+            className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-blue-500 focus:outline-none border-b transition-all ${errors.email ? "border-red-500" : "border-gray-100 focus:border-blue-500"}`}
             placeholder="hello@luxury.com"
           />
           {errors.email && <p className="text-[8px] text-red-500 mt-1 uppercase font-bold">{errors.email}</p>}
@@ -121,7 +121,7 @@ export default function ContactLocation() {
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
-            className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-purple-900 focus:outline-none border-b transition-all ${errors.phoneNumber ? "border-red-500" : "border-gray-100 focus:border-teal-500"}`}
+            className={`w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-blue-500 focus:outline-none border-b transition-all ${errors.phoneNumber ? "border-red-500" : "border-gray-100 focus:border-blue-500"}`}
             placeholder="+251 ..."
           />
           {errors.phoneNumber && <p className="text-[8px] text-red-500 mt-1 uppercase font-bold">{errors.phoneNumber}</p>}
@@ -135,13 +135,13 @@ export default function ContactLocation() {
             name="service"
             value={formData.service}
             onChange={handleChange}
-            className="w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-purple-900 focus:outline-none appearance-none cursor-pointer border-b border-gray-100 focus:border-teal-500 transition-all"
+            className="w-full bg-transparent pt-2 pb-1 text-sm md:text-base text-blue-500 focus:outline-none appearance-none cursor-pointer border-b border-gray-100 focus:border-blue-500 transition-all"
           >
             {cCfg.form.services.map((service) => (
               <option key={service} value={service}>{service}</option>
             ))}
           </select>
-          <HiChevronDown className="absolute right-0 bottom-2 text-teal-600 pointer-events-none" />
+          <HiChevronDown className="absolute right-0 bottom-2 text-blue-800 pointer-events-none" />
         </div>
       </div>
 
@@ -149,7 +149,7 @@ export default function ContactLocation() {
         type="submit"
         disabled={loading}
         whileTap={{ scale: 0.97 }}
-        className="w-full flex items-center justify-center gap-3 bg-purple-900 text-white py-4 md:py-5 rounded-full text-[12px] md:text-[14px] font-black uppercase tracking-widest shadow-xl active:bg-teal-700 transition-all"
+        className="w-full flex items-center justify-center gap-3 bg-blue-500 text-white py-4 md:py-5 rounded-full text-[12px] md:text-[14px] font-black uppercase tracking-widest shadow-xl active:bg-blue-700 transition-all"
       >
         <span>{loading ? cCfg.form.loadingText : cCfg.form.buttonText}</span>
         <RiCalendarScheduleLine size={18} />
@@ -158,10 +158,10 @@ export default function ContactLocation() {
   </div>
 
   {/* RIGHT (Desktop) / BOTTOM (Mobile): INFO CARD */}
-  <div className="w-full lg:w-1/2 bg-[#2d1450] p-8 md:p-16 lg:p-20 order-2 flex flex-col justify-between relative overflow-hidden">
+  <div className="w-full lg:w-1/2 bg-blue-950 p-8 md:p-16 lg:p-20 order-2 flex flex-col justify-between relative overflow-hidden">
     {/* Ambient Background Blobs */}
-    <div className="absolute -top-20 -right-20 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full" />
-    <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 blur-[80px] rounded-full" />
+    <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full" />
+    <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-500-500/10 blur-[80px] rounded-full" />
 
     <div className="relative z-10">
       <h3 className="text-2xl md:text-3xl font-bold text-white mb-10 md:mb-16 tracking-tight">
@@ -171,20 +171,20 @@ export default function ContactLocation() {
       <div className="space-y-8 md:space-y-12">
         <div className="flex items-start gap-5 md:gap-8">
           <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-            <HiOutlineMapPin className="text-teal-400 text-xl md:text-2xl" />
+            <HiOutlineMapPin className="text-blue-400 text-xl md:text-2xl" />
           </div>
           <div>
-            <p className="text-teal-400 font-black uppercase tracking-widest text-[8px] md:text-[9px] mb-1">Office</p>
+            <p className="text-blue-400 font-black uppercase tracking-widest text-[8px] md:text-[9px] mb-1">Office</p>
             <p className="text-white/80 text-sm md:text-lg leading-snug">{cCfg.info.location.address}</p>
           </div>
         </div>
 
         <div className="flex items-start gap-5 md:gap-8">
           <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-            <HiOutlinePhone className="text-teal-400 text-xl md:text-2xl" />
+            <HiOutlinePhone className="text-blue-400 text-xl md:text-2xl" />
           </div>
           <div>
-            <p className="text-teal-400 font-black uppercase tracking-widest text-[8px] md:text-[9px] mb-1">Concierge</p>
+            <p className="text-blue-400 font-black uppercase tracking-widest text-[8px] md:text-[9px] mb-1">Concierge</p>
             <p className="text-white/80 text-sm md:text-lg leading-snug">{cCfg.info.concierge.phone}</p>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function ContactLocation() {
 
     {/* MAP */}
     <div className="mt-10 md:mt-16 group relative h-48 md:h-72 w-full rounded-2xl md:rounded-[2rem] overflow-hidden border border-white/10 shadow-xl">
-      <div className="absolute inset-0 bg-purple-900/40 z-10 pointer-events-none group-hover:bg-transparent transition-colors duration-700" />
+      <div className="absolute inset-0 bg-blue-500/40 z-10 pointer-events-none group-hover:bg-transparent transition-colors duration-700" />
       <iframe
         title="Location Map"
         className="w-full h-full grayscale invert opacity-50 md:opacity-70 group-hover:opacity-100 transition-all duration-1000"
