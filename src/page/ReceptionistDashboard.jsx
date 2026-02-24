@@ -79,7 +79,7 @@ export default function ReceptionistDashboard() {
       <Toaster />
       <header className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-6">
         <div>
-          <h1 className="text-4xl font-black tracking-tight mb-2">Clinic <span className="font-serif italic text-blue-800">Flow.</span></h1>
+          <h1 className="text-4xl font-black tracking-tight mb-2">YOMA <span className="font-serif italic text-blue-800">Dental.</span></h1>
           <p className="text-gray-400 text-sm font-medium uppercase tracking-widest">{new Date().toDateString()}</p>
         </div>
         <div className="flex gap-3 w-full lg:w-96">
