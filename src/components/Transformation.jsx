@@ -76,6 +76,7 @@ export default function TransformationGallery() {
 
   return (
     <section 
+      id="transformation"
       className="py-16 md:py-24 pb-0 bg-[#FAFAFA] overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
